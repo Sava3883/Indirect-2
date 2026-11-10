@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Вход — тестовый сайт</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="products.html">Товары</a>
+      <a href="login.html" aria-current="page">Вход</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Вход</h1>
+    <p class="hint">Тестовые данные: имя <code>student</code>, пароль <code>test1234</code>. Реальные данные вводить не нужно.</p>
+    <form id="login-form" novalidate>
+      <label for="user-name">Имя пользователя</label>
+      <input id="user-name" name="user-name" type="text" autocomplete="off">
+      <label for="password">Пароль</label>
+      <input id="password" name="password" type="password" autocomplete="off">
+      <button type="submit" id="login-button">Войти</button>
+    </form>
+    <p id="message" role="status" data-test="result"></p>
+  </main>
+  <footer>Тестовый сайт. Данные на страницах вымышленные.</footer>
+  <script>
+    document.getElementById("login-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = document.getElementById("user-name").value.trim();
+      var pass = document.getElementById("password").value;
+      var msg = document.getElementById("message");
+      if (name === "" || pass === "") {
+        msg.className = "error";
+        msg.textContent = "Заполните имя пользователя и пароль";
+      } else if (name === "student" && pass === "test1234") {
+        msg.className = "ok";
+        msg.textContent = "Вход выполнен";
+      } else {
+        msg.className = "error";
+        msg.textContent = "Неверное имя пользователя или пароль";
+      }
+    });
+  </script>
+</body>
+</html>

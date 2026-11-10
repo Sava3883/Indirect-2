@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Товары — тестовый сайт</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="products.html" aria-current="page">Товары</a>
+      <a href="login.html">Вход</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Товары</h1>
+    <p>В корзине: <strong id="cart-count">0</strong></p>
+    <ul class="plain" id="product-list">
+      <li><span>Рюкзак</span><span class="price">300 лей</span><button type="button" class="add" id="add-backpack">В корзину</button></li>
+      <li><span>Блокнот</span><span class="price">60 лей</span><button type="button" class="add" id="add-notebook">В корзину</button></li>
+      <li><span>Термос</span><span class="price">180 лей</span><button type="button" class="add" id="add-thermos">В корзину</button></li>
+    </ul>
+    <p style="margin-top:1.5rem"><button type="button" class="secondary" id="clear-cart">Очистить корзину</button></p>
+  </main>
+  <footer>Тестовый сайт. Данные на страницах вымышленные.</footer>
+  <script>
+    var count = 0;
+    var out = document.getElementById("cart-count");
+    document.querySelectorAll(".add").forEach(function (b) {
+      b.addEventListener("click", function () { count += 1; out.textContent = count; });
+    });
+    document.getElementById("clear-cart").addEventListener("click", function () {
+      count = 0; out.textContent = count;
+    });
+  </script>
+</body>
+</html>

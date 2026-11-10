@@ -44,7 +44,7 @@ ul.plain li { display: flex; justify-content: space-between; align-items: center
   padding: .85rem 0; border-bottom: 1px solid var(--line); }
 .price { color: var(--muted); }
 label { display: block; margin: 1rem 0 .25rem; font-weight: 600; }
-input {
+input, textarea {
   width: 100%; padding: .6rem .75rem; font: inherit; color: var(--text);
   background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
 }
@@ -60,3 +60,8 @@ form button { margin-top: 1.25rem; }
 #message.ok { color: var(--ok); }
 #message.error { color: var(--err); }
 footer { padding-bottom: 2rem; color: var(--muted); font-size: .9rem; }
+textarea { resize: vertical; }
+ul.notes li { display: block; }
+ul.notes strong { display: block; }
+ul.notes .meta { display: block; color: var(--muted); font-size: .9rem; }
+code { font-family: ui-monospace, Consolas, monospace; font-size: .92em; }
